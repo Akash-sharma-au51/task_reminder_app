@@ -1,0 +1,29 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.ts",
+    "dev": "nodemon index.ts"
+  },
+  "dependencies": {
+    "@types/express": "^5.0.3",
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.19.1",
+    "morgan": "^1.10.1",
+    "nodemon": "^3.1.10",
+    "typescript": "^5.9.3"
+  },
+  "devDependencies": {
+    "@types/morgan": "^1.9.10"
+  }
+}
