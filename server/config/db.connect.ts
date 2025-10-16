@@ -1,10 +1,9 @@
 import mongoose from "mongoose"
 import dotenv from "dotenv"
 
-
-const uri:any = process.env.MONGO_URI
-
 dotenv.config()
+
+const uri: any = process.env.MONGO_URI
 
 
 const ConnectDB = async()=>{
