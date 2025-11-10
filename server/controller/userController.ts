@@ -6,7 +6,7 @@ import jwt from "jsonwebtoken"
 
 dotenv.config()
 
-const secretkey = process.env.JWT_SECRET
+const secretkey = process.env.JWT_SECRET || 'fallback_secret_key'
 
 const registerUser = async(req:Request,res:Response)=>{
     const {name,username,email,password,isAdmin} = req.body
@@ -42,7 +42,7 @@ const registerUser = async(req:Request,res:Response)=>{
 
     //token
 
-    const token = jwt.sign({id:newuser._id,email:newuser.email,isAdmin:newuser.isAdmin},process.env.JWT_SECRET,{expiresIn:"1h"})
+    const token = jwt.sign({id:newuser._id,email:newuser.email,isAdmin:newuser.isAdmin},secretkey,{expiresIn:"1h"})
 
     //success
 
@@ -103,7 +103,7 @@ const loginUser = async(req:Request,res:Response)=>{
             return
         }
 
-        const token = jwt.sign({id:user._id,email:user.email,isAdmin:user.isAdmin},process.env.JWT_SECRET,{expiresIn:"1h"})
+        const token = jwt.sign({id:user._id,email:user.email,isAdmin:user.isAdmin}, secretkey, {expiresIn:"1h"})
 
         res.status(200).json({
             message:"login successful",
