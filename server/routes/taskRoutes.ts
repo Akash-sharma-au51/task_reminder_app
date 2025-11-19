@@ -5,8 +5,8 @@ import isAdmin, { isLoggedin } from "../middleware/isAdmin";
 const router = express.Router();
 
 router.post('/assigntask', isLoggedin, isAdmin, taskController.assignTask);
-router.patch('/updatetask',isLoggedin,isAdmin,taskController.updateTask)
-router.post('/completed',isAdmin,isLoggedin,taskController.markTaskCompleted)
+router.patch('/updatetask/:id', isLoggedin, isAdmin, taskController.updateTask);
+router.patch('/completed/:id', isLoggedin, isAdmin, taskController.markTaskCompleted);
 
 
 
